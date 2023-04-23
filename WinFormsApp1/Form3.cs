@@ -49,6 +49,31 @@ namespace WinFormsApp1
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+
+            // 创建连接字符串
+            string connectionString = "Data Source=DESKTOP-UBBFG4S\\SQLEXPRESS01;Initial Catalog=HIS;Integrated Security=True";
+
+            // 创建查询语句
+            string query = "SELECT * FROM patientsInfo";
+
+            // 创建数据适配器和数据集
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataSet dataSet = new DataSet();
+
+                // 填充数据集
+                adapter.Fill(dataSet, "patientsInfo");
+
+                // 绑定数据集到 DataGridView
+                dataGridView1.DataSource = dataSet.Tables["patientsInfo"];
+            }
+
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,7 +39,7 @@ namespace WinFormsApp1
                     {
                         while (reader.Read())
                         {
-                            comboBox1.Items.Add(reader.GetString(0));
+                            orgid.Items.Add(reader.GetString(0));
                         }
                     }
                     else
@@ -51,6 +52,29 @@ namespace WinFormsApp1
             catch (Exception)
             {
                 throw;
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=DESKTOP-UBBFG4S\\SQLEXPRESS01;Initial Catalog=HIS;Integrated Security=True";
+            string sqlstr = "insert into patioutvisit(CardNo,RegDate,RegOrg,RegEmp,SerialNumber) values('" + cardno + "','" + regdate + "','" + orgid + "','" + empid + "','" + serialnumber + "')";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(sqlstr, connection);
+                    int i = command.ExecuteNonQuery();
+                    if (i > 0)
+                        MessageBox.Show("挂号成功，请及时就诊！");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
         }
