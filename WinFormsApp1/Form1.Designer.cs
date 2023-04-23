@@ -307,7 +307,7 @@
             MainMenuStrip = menuStrip1;
             Margin = new Padding(2, 2, 2, 2);
             Name = "Form1";
-            Text = "注册";
+            Text = "注册建卡";
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
