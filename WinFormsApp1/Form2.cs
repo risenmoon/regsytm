@@ -59,7 +59,7 @@ namespace WinFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             string connectionString = "Data Source=DESKTOP-UBBFG4S\\SQLEXPRESS01;Initial Catalog=HIS;Integrated Security=True";
-            string sqlstr = "insert into patioutvisit(CardNo,RegDate,RegOrg,RegEmp,SerialNumber) values('" + cardno + "','" + regdate + "','" + orgid + "','" + empid + "','" + serialnumber + "')";
+            string sqlstr = "insert into patioutvisit(CardNo,RegDate,RegOrg,RegEmp,SerialNumber) values('" + txtCardNo + "','" + regdate + "','" + orgid + "','" + empid + "','" + serialnumber + "')";
 
             try
             {
@@ -77,6 +77,41 @@ namespace WinFormsApp1
                 throw ex;
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // 获取输入的就诊卡号
+            string cardNo = txtCardNo.Text;
+            string connectionString = "Data Source=DESKTOP-UBBFG4S\\SQLEXPRESS01;Initial Catalog=HIS;Integrated Security=True";
+            try
+            {
+                // 建立连接
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // 查询病人信息
+                    string selectSql = "SELECT PatiName FROM patiinfo WHERE CardNo = @cardNo";
+                    SqlCommand command = new SqlCommand(selectSql, connection);
+                    command.Parameters.AddWithValue("@cardNo", cardNo);
+                    object result = command.ExecuteScalar();
+
+                    // 将查询结果输出到Label控件
+                    if (result != null)
+                    {
+                        lblPatiName.Text = result.ToString();
+                    }
+                    else
+                    {
+                        lblPatiName.Text = "未找到病人信息";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

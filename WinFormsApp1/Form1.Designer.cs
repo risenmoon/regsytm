@@ -41,8 +41,8 @@
             用户管理ToolStripMenuItem = new ToolStripMenuItem();
             注册界面 = new GroupBox();
             IDCard = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            tb_Address = new TextBox();
+            tb_Phone = new TextBox();
             Phone = new Label();
             Address = new Label();
             label7 = new Label();
@@ -179,8 +179,8 @@
             注册界面.Controls.Add(PatiName);
             注册界面.Controls.Add(IDCard);
             注册界面.Controls.Add(lbl_user);
-            注册界面.Controls.Add(textBox2);
-            注册界面.Controls.Add(textBox3);
+            注册界面.Controls.Add(tb_Address);
+            注册界面.Controls.Add(tb_Phone);
             注册界面.Controls.Add(PassWord);
             注册界面.Controls.Add(button4);
             注册界面.Controls.Add(Phone);
@@ -212,25 +212,25 @@
             IDCard.Size = new Size(97, 23);
             IDCard.TabIndex = 12;
             // 
-            // textBox2
+            // tb_Address
             // 
-            textBox2.BackColor = SystemColors.Window;
-            textBox2.ForeColor = SystemColors.ActiveCaptionText;
-            textBox2.Location = new Point(193, 223);
-            textBox2.Margin = new Padding(2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(97, 23);
-            textBox2.TabIndex = 13;
+            tb_Address.BackColor = SystemColors.Window;
+            tb_Address.ForeColor = SystemColors.ActiveCaptionText;
+            tb_Address.Location = new Point(193, 223);
+            tb_Address.Margin = new Padding(2);
+            tb_Address.Name = "tb_Address";
+            tb_Address.Size = new Size(97, 23);
+            tb_Address.TabIndex = 13;
             // 
-            // textBox3
+            // tb_Phone
             // 
-            textBox3.BackColor = SystemColors.Window;
-            textBox3.ForeColor = SystemColors.ActiveCaptionText;
-            textBox3.Location = new Point(193, 256);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(97, 23);
-            textBox3.TabIndex = 14;
+            tb_Phone.BackColor = SystemColors.Window;
+            tb_Phone.ForeColor = SystemColors.ActiveCaptionText;
+            tb_Phone.Location = new Point(193, 256);
+            tb_Phone.Margin = new Padding(2);
+            tb_Phone.Name = "tb_Phone";
+            tb_Phone.Size = new Size(97, 23);
+            tb_Phone.TabIndex = 14;
             // 
             // Phone
             // 
@@ -331,7 +331,7 @@
         private Label label3;
         private Label Phone;
         private TextBox IDCard;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox tb_Address;
+        private TextBox tb_Phone;
     }
 }

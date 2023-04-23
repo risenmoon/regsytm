@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            button1 = new Button();
-            cardno = new TextBox();
+            btnSearch_Click = new Button();
+            txtCardNo = new TextBox();
             label1 = new Label();
             groupBox2 = new GroupBox();
             button2 = new Button();
@@ -42,14 +42,16 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
+            lblPatiName = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(cardno);
+            groupBox1.Controls.Add(lblPatiName);
+            groupBox1.Controls.Add(btnSearch_Click);
+            groupBox1.Controls.Add(txtCardNo);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(46, 26);
             groupBox1.Name = "groupBox1";
@@ -58,21 +60,22 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "患者信息";
             // 
-            // button1
+            // btnSearch_Click
             // 
-            button1.Location = new Point(319, 30);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "查询";
-            button1.UseVisualStyleBackColor = true;
+            btnSearch_Click.Location = new Point(319, 30);
+            btnSearch_Click.Name = "btnSearch_Click";
+            btnSearch_Click.Size = new Size(75, 23);
+            btnSearch_Click.TabIndex = 2;
+            btnSearch_Click.Text = "查询";
+            btnSearch_Click.UseVisualStyleBackColor = true;
+            btnSearch_Click.Click += button1_Click;
             // 
-            // cardno
+            // txtCardNo
             // 
-            cardno.Location = new Point(168, 30);
-            cardno.Name = "cardno";
-            cardno.Size = new Size(100, 23);
-            cardno.TabIndex = 1;
+            txtCardNo.Location = new Point(168, 30);
+            txtCardNo.Name = "txtCardNo";
+            txtCardNo.Size = new Size(100, 23);
+            txtCardNo.TabIndex = 1;
             // 
             // label1
             // 
@@ -180,6 +183,15 @@
             label2.TabIndex = 0;
             label2.Text = "请选择挂号时间：";
             // 
+            // lblPatiName
+            // 
+            lblPatiName.AutoSize = true;
+            lblPatiName.Location = new Point(74, 62);
+            lblPatiName.Name = "lblPatiName";
+            lblPatiName.Size = new Size(43, 17);
+            lblPatiName.TabIndex = 3;
+            lblPatiName.Text = "label6";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -200,8 +212,8 @@
 
         private GroupBox groupBox1;
         private Label label1;
-        private Button button1;
-        private TextBox cardno;
+        private Button btnSearch_Click;
+        private TextBox txtCardNo;
         private GroupBox groupBox2;
         private ComboBox orgid;
         private Label label5;
@@ -212,5 +224,6 @@
         private ComboBox empid;
         private ComboBox serialnumber;
         private DateTimePicker regdate;
+        private Label lblPatiName;
     }
 }

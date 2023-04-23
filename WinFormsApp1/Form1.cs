@@ -90,7 +90,7 @@ namespace WinFormsApp1
                     }
 
                     string insertSql = "insert into patientsinfo(PatiName,PassWord,Address,Phone,IDCard,CardNo) values(";
-                    insertSql += "'" + PatiName + "','" + PassWord + "','" + Address + "','" + Phone + "','" + IDCard + "','00000" + currentCard + "')";
+                    insertSql += "'" + PatiName.Text + "','" + tb_pwd.Text + "','" + tb_Address.Text + "','" + tb_Phone.Text + "','" + IDCard.Text + "','00000" + currentCard + "')";
                     SqlCommand command = new SqlCommand(insertSql, connection);
                     int i = command.ExecuteNonQuery();
 
