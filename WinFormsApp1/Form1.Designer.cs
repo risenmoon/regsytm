@@ -48,6 +48,7 @@
             label7 = new Label();
             label4 = new Label();
             label3 = new Label();
+            挂号ToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             注册界面.SuspendLayout();
             SuspendLayout();
@@ -170,9 +171,11 @@
             // 
             // 用户管理ToolStripMenuItem
             // 
+            用户管理ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 挂号ToolStripMenuItem });
             用户管理ToolStripMenuItem.Name = "用户管理ToolStripMenuItem";
             用户管理ToolStripMenuItem.Size = new Size(68, 22);
             用户管理ToolStripMenuItem.Text = "用户管理";
+            用户管理ToolStripMenuItem.Click += 用户管理ToolStripMenuItem_Click;
             // 
             // 注册界面
             // 
@@ -291,6 +294,13 @@
             label3.Size = new Size(0, 19);
             label3.TabIndex = 12;
             // 
+            // 挂号ToolStripMenuItem
+            // 
+            挂号ToolStripMenuItem.Name = "挂号ToolStripMenuItem";
+            挂号ToolStripMenuItem.Size = new Size(180, 22);
+            挂号ToolStripMenuItem.Text = "挂号";
+            挂号ToolStripMenuItem.Click += 挂号ToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -333,5 +343,6 @@
         private TextBox IDCard;
         private TextBox tb_Address;
         private TextBox tb_Phone;
+        private ToolStripMenuItem 挂号ToolStripMenuItem;
     }
 }

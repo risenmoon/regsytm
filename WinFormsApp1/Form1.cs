@@ -96,14 +96,7 @@ namespace WinFormsApp1
 
                     if (i > 0)
                         MessageBox.Show("注册成功，您的就诊卡号是" + "00000" + currentCard);
-                    // 创建新窗体对象
-                    Form2 form2 = new Form2();
 
-                    // 显示新窗体
-                    form2.Show();
-
-                    // 隐藏当前窗体
-                    this.Hide();
 
                 }
             }
@@ -150,6 +143,22 @@ namespace WinFormsApp1
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void 用户管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 挂号ToolStripMenuItem_Click(object sender, EventArgs e)
+        {// 创建新窗体对象
+            Form2 form2 = new Form2();
+
+            // 显示新窗体
+            form2.Show();
+
+            // 隐藏当前窗体
+            this.Hide();
         }
     }
 }

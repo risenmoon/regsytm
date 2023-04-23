@@ -29,26 +29,28 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            label6 = new Label();
+            lblPatiName = new Label();
             btnSearch_Click = new Button();
             txtCardNo = new TextBox();
             label1 = new Label();
             groupBox2 = new GroupBox();
             button2 = new Button();
             empid = new ComboBox();
-            serialnumber = new ComboBox();
+            orgtypeid = new ComboBox();
             regdate = new DateTimePicker();
             orgid = new ComboBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            lblPatiName = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(lblPatiName);
             groupBox1.Controls.Add(btnSearch_Click);
             groupBox1.Controls.Add(txtCardNo);
@@ -59,6 +61,23 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "患者信息";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(35, 63);
+            label6.Name = "label6";
+            label6.Size = new Size(68, 17);
+            label6.TabIndex = 4;
+            label6.Text = "患者姓名：";
+            // 
+            // lblPatiName
+            // 
+            lblPatiName.AutoSize = true;
+            lblPatiName.Location = new Point(109, 63);
+            lblPatiName.Name = "lblPatiName";
+            lblPatiName.Size = new Size(0, 17);
+            lblPatiName.TabIndex = 3;
             // 
             // btnSearch_Click
             // 
@@ -91,7 +110,7 @@
             // 
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(empid);
-            groupBox2.Controls.Add(serialnumber);
+            groupBox2.Controls.Add(orgtypeid);
             groupBox2.Controls.Add(regdate);
             groupBox2.Controls.Add(orgid);
             groupBox2.Controls.Add(label5);
@@ -118,29 +137,35 @@
             // empid
             // 
             empid.FormattingEnabled = true;
+            empid.Items.AddRange(new object[] { "沈昊" });
             empid.Location = new Point(450, 104);
             empid.Name = "empid";
             empid.Size = new Size(121, 25);
             empid.TabIndex = 7;
             // 
-            // serialnumber
+            // orgtypeid
             // 
-            serialnumber.FormattingEnabled = true;
-            serialnumber.Location = new Point(180, 104);
-            serialnumber.Name = "serialnumber";
-            serialnumber.Size = new Size(121, 25);
-            serialnumber.TabIndex = 6;
+            orgtypeid.FormattingEnabled = true;
+            orgtypeid.Items.AddRange(new object[] { "门诊号", "急诊号" });
+            orgtypeid.Location = new Point(180, 104);
+            orgtypeid.Name = "orgtypeid";
+            orgtypeid.Size = new Size(121, 25);
+            orgtypeid.TabIndex = 6;
             // 
             // regdate
             // 
+            regdate.Format = DateTimePickerFormat.Short;
             regdate.Location = new Point(180, 46);
             regdate.Name = "regdate";
             regdate.Size = new Size(121, 23);
             regdate.TabIndex = 5;
+            regdate.Value = new DateTime(2023, 4, 23, 20, 10, 41, 0);
+            regdate.ValueChanged += regdate_ValueChanged;
             // 
             // orgid
             // 
             orgid.FormattingEnabled = true;
+            orgid.Items.AddRange(new object[] { "内科", "外科" });
             orgid.Location = new Point(450, 44);
             orgid.Name = "orgid";
             orgid.Size = new Size(121, 25);
@@ -183,15 +208,6 @@
             label2.TabIndex = 0;
             label2.Text = "请选择挂号时间：";
             // 
-            // lblPatiName
-            // 
-            lblPatiName.AutoSize = true;
-            lblPatiName.Location = new Point(74, 62);
-            lblPatiName.Name = "lblPatiName";
-            lblPatiName.Size = new Size(43, 17);
-            lblPatiName.TabIndex = 3;
-            lblPatiName.Text = "label6";
-            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -222,8 +238,9 @@
         private Label label2;
         private Button button2;
         private ComboBox empid;
-        private ComboBox serialnumber;
+        private ComboBox orgtypeid;
         private DateTimePicker regdate;
         private Label lblPatiName;
+        private Label label6;
     }
 }
