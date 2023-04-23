@@ -149,9 +149,9 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(171, 46);
+            dateTimePicker1.Location = new Point(180, 46);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(143, 23);
+            dateTimePicker1.Size = new Size(121, 23);
             dateTimePicker1.TabIndex = 5;
             // 
             // comboBox2
