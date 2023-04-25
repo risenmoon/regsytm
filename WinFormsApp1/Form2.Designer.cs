@@ -137,7 +137,7 @@
             // empid
             // 
             empid.FormattingEnabled = true;
-            empid.Items.AddRange(new object[] { "沈昊" });
+            empid.Items.AddRange(new object[] { "医生" });
             empid.Location = new Point(450, 104);
             empid.Name = "empid";
             empid.Size = new Size(121, 25);

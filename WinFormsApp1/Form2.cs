@@ -82,9 +82,9 @@ namespace WinFormsApp1
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
 
         }

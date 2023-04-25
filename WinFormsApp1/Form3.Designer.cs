@@ -193,7 +193,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Form3";
-            Text = "接诊";
+            Text = "D";
             Load += Form3_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
